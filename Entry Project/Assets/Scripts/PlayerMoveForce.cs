@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class PlayerMoveForce : MonoBehaviour
 {
-    public Rigidbody rb;          // drag your movable's Rigidbody here
-    public float force = 10f;     // tweak in Inspector
+    public Rigidbody rb;
+    public float force = 10f;
 
     private float h;
     private float v;
 
     void Update()
     {
-        // Uses Input Manager axes: A/D + Left/Right and W/S + Up/Down
+        // Uses Input Manager axes
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
     }
