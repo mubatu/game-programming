@@ -17,10 +17,7 @@ public class SpawnerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(spawnKey))
         {
-            // Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
-
-            Vector3 pos = spawnPoint != null ? spawnPoint.position : transform.position;
-            Instantiate(prefabToSpawn, pos, Quaternion.identity);
+            Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
         }
     }
 }
