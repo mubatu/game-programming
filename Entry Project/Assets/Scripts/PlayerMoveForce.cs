@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMoveForce : MonoBehaviour
 {
     public Rigidbody rb;
-    public float force = 10f;
+    public float force = 12f;
 
     private float h;
     private float v;
