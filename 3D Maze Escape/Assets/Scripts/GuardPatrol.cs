@@ -60,7 +60,7 @@ public class GuardPatrol : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("CAUGHT BY GUARD! Game Over.");
-            Time.timeScale = 0f; // Freeze the game
+            GameManager.instance.GameOver(); // Game over
         }
     }
 

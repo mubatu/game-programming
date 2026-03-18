@@ -9,8 +9,7 @@ public class LaserDamage : MonoBehaviour
         {
             Debug.Log("ZAPPED! The player hit the laser. Game Over.");
             
-            // Freeze the game to act as a Game Over state
-            Time.timeScale = 0f; 
+            GameManager.instance.GameOver(); // Game over
         }
     }
 }

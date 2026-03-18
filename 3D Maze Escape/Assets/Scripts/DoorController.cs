@@ -13,7 +13,7 @@ public class DoorController : MonoBehaviour
             gameObject.SetActive(false);
             
             // End the game by stopping time
-            Time.timeScale = 0f; 
+            GameManager.instance.WinGame(); 
         }
     }
 }
