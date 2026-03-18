@@ -1,4 +1,4 @@
-# 3D Maze Escape
+<img width="997" height="507" alt="maze-solve" src="https://github.com/user-attachments/assets/5cf5c578-dcc8-448a-926b-b7dde0c93186" /># 3D Maze Escape
 
 ## Overview
 A third-person 3D maze game developed in Unity. The objective is to navigate the maze, avoid traps, push a physics-based key to the exit door, and escape.
@@ -9,7 +9,9 @@ A third-person 3D maze game developed in Unity. The objective is to navigate the
 <img width="466" height="300" alt="img2" src="https://github.com/user-attachments/assets/97b5f182-8bbc-4841-bb97-f2011a7340a9" />
 
 ## Maze Map
-<img width="600" height="300" alt="maze map" src="https://github.com/user-attachments/assets/36036758-906c-4ebc-8dd2-ec640e2652a8" />
+<img width="600" height="300" alt="maze-solve" src="https://github.com/user-attachments/assets/d67c6667-6b39-4a27-b27b-d51dcf96b6d4" />
+
+
 
 ## Assets Used
 * **Third Person Character Controller** ([store link](https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-urp-196526)): Utilized for the player character and the patrolling guard models, and animations.
