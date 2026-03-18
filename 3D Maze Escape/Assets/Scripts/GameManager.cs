@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject infoPanel;
     public GameObject winPanel;
     public GameObject gameOverPanel;
+    public AudioSource backgroundMusic;
 
     void Awake()
     {
@@ -29,6 +30,12 @@ public class GameManager : MonoBehaviour
 
             // Reset the flag so the main menu shows up next time you boot the game cold
             isRestarting = false; 
+
+            // Ensure music is playing if we restart
+            if (backgroundMusic != null && !backgroundMusic.isPlaying) 
+            {
+                backgroundMusic.Play();
+            }
         }
         else
         {
@@ -41,8 +48,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // --- BUTTON FUNCTIONS ---
+    void Update()
+    {
+        // Check if the "M" key was pressed
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (backgroundMusic != null)
+            {
+                // If the music is currently playing, pause it
+                if (backgroundMusic.isPlaying)
+                {
+                    backgroundMusic.Pause();
+                }
+                // If it is not playing, resume it
+                else
+                {
+                    backgroundMusic.UnPause(); 
+                }
+            }
+        }
+    }
 
+    // --- BUTTON FUNCTIONS ---
     public void StartGame()
     {
         startPanel.SetActive(false);
@@ -69,7 +96,6 @@ public class GameManager : MonoBehaviour
     }
 
     // --- GAME STATE FUNCTIONS ---
-
     public void WinGame()
     {
         winPanel.SetActive(true);
