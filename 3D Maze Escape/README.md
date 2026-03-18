@@ -9,7 +9,7 @@ A third-person 3D maze game developed in Unity. The objective is to navigate the
 <img width="466" height="300" alt="img2" src="https://github.com/user-attachments/assets/97b5f182-8bbc-4841-bb97-f2011a7340a9" />
 
 ## Maze Map
-<img width="600" height="300" alt="maze-solve" src="https://github.com/user-attachments/assets/d67c6667-6b39-4a27-b27b-d51dcf96b6d4" />
+<img width="800" height="400" alt="maze-solve" src="https://github.com/user-attachments/assets/d67c6667-6b39-4a27-b27b-d51dcf96b6d4" />
 
 ## Assets Used
 * **Third Person Character Controller** ([store link](https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-urp-196526)): Utilized for the player character and the patrolling guard models, and animations.
