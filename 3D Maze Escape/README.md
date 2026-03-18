@@ -3,7 +3,8 @@
 ## Overview
 A third-person 3D maze game developed in Unity. The objective is to navigate the maze, avoid traps, push a physics-based key to the exit door, and escape.
 
-## In-game Screenshots
+## In-Game Shots
+* A gameplay video is provided [in this link](https://youtu.be/JgVkeFkvQ3A).
 <img width="466" height="300" alt="img1" src="https://github.com/user-attachments/assets/9294a54e-09b5-480f-a449-6e46145ee38d" />
 <img width="466" height="300" alt="img2" src="https://github.com/user-attachments/assets/97b5f182-8bbc-4841-bb97-f2011a7340a9" />
 
