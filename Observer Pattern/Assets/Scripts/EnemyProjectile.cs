@@ -11,6 +11,13 @@ public class EnemyProjectile : MonoBehaviour {
         Destroy(gameObject, lifetime);
     }
 
+    void OnEnable() {
+        EnemyHealth.FinalBossDeath += DestroyProjectile;
+    }
+    void OnDisable() {
+        EnemyHealth.FinalBossDeath -= DestroyProjectile;
+    }
+
     void Update() {
         if (player == null) {
             Destroy(gameObject);
@@ -28,5 +35,8 @@ public class EnemyProjectile : MonoBehaviour {
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
+    }
+    void DestroyProjectile() {
+        Destroy(gameObject);
     }
 }
