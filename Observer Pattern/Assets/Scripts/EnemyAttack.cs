@@ -12,8 +12,18 @@ public class EnemyAttack : MonoBehaviour {
     [SerializeField] private float projectileSpawnHeight = 4f;
     private float nextMeleeTime = 0f;
     private float nextProjectileTime = 0f;
+    
+    public bool bossActive = true;
 
+    void OnEnable() {
+        EnemyHealth.FinalBossDeath += BossIsDead;
+    }
+    void OnDisable() {
+        EnemyHealth.FinalBossDeath -= BossIsDead;
+    }
     void Update() {
+        if (!bossActive) return;
+        
         float distance = Vector3.Distance(transform.position, player.position);
 
         if (Time.time >= nextMeleeTime && distance <= meleeRange) {
@@ -40,5 +50,9 @@ public class EnemyAttack : MonoBehaviour {
             transform.position.z
         );
         Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
+    }
+    void BossIsDead()
+    {
+        bossActive = false;
     }
 }
