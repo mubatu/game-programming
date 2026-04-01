@@ -8,6 +8,12 @@ public class PlayerVictoryDance : MonoBehaviour {
     void Start() {
         playerMovement = GetComponent<PlayerMovement>();
     }
+    void OnEnable() {
+        EnemyHealth.FinalBossDeath += Play;
+    }
+    void OnDisable() {
+        EnemyHealth.FinalBossDeath -= Play;
+    }
 
     public void Play() {
         StartCoroutine(Spin());

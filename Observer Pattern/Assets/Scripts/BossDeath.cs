@@ -4,6 +4,12 @@ using System.Collections;
 public class BossDeath : MonoBehaviour {
     [SerializeField] private float deathDuration = 2f;
 
+    void OnEnable() {
+        EnemyHealth.FinalBossDeath += Play;
+    }
+    void OnDisable() {
+        EnemyHealth.FinalBossDeath -= Play;
+    }
     public void Play() {
         StartCoroutine(DeathRoutine());
     }

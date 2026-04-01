@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class EnemyHealth : MonoBehaviour {
+    public static event Action FinalBossDeath;
     [SerializeField] public int maxHealth = 500;
     [SerializeField] private Slider healthBar;
     [SerializeField] private VictoryUI victoryUI;
@@ -33,13 +35,15 @@ public class EnemyHealth : MonoBehaviour {
     }
 
     void Die() {
-        victoryUI.Show();
-        winSound.Play();
-        playerVictoryDance.Play();
-        bossDeath.Play();
-        achievementUI.Show();
-        goldDrop.Drop();
-        cameraShake.Play();
-        playerHealth.Regen();
+        FinalBossDeath?.Invoke();
+
+        // victoryUI.Show();
+        // winSound.Play();
+        // playerVictoryDance.Play();
+        // bossDeath.Play();
+        // achievementUI.Show();
+        // goldDrop.Drop();
+        // cameraShake.Play();
+        // playerHealth.Regen();
     }
 }

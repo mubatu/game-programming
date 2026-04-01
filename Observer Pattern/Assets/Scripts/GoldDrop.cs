@@ -6,6 +6,13 @@ public class GoldDrop : MonoBehaviour {
     [SerializeField] private Transform bossTransform;
     [SerializeField] private float dropDelay = 3f;
 
+    void OnEnable() {
+        EnemyHealth.FinalBossDeath += Drop;
+    }
+    void OnDisable() {
+        EnemyHealth.FinalBossDeath -= Drop;
+    }
+
     public void Drop() {
         StartCoroutine(DropRoutine());
     }

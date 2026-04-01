@@ -10,6 +10,12 @@ public class CameraShake : MonoBehaviour {
     void Start() {
         cameraFollow = GetComponent<CameraFollow>();
     }
+    void OnEnable() {
+        EnemyHealth.FinalBossDeath += Play;
+    }
+    void OnDisable() {
+        EnemyHealth.FinalBossDeath -= Play;
+    }
 
     public void Play() {
         StartCoroutine(ShakeRoutine());

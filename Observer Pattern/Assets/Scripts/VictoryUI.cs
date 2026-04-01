@@ -8,6 +8,12 @@ public class VictoryUI : MonoBehaviour {
     void Start() {
         text = GetComponent<TextMeshProUGUI>();
     }
+    void OnEnable() {
+        EnemyHealth.FinalBossDeath += Show;
+    }
+    void OnDisable() {
+        EnemyHealth.FinalBossDeath -= Show;
+    }
     public void Show() {
         StartCoroutine(ShowRoutine());
     }

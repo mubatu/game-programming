@@ -1995,6 +1995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce921be7c5d29c4ebd3453f94b91d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 1066072480}
 --- !u!1 &1068989006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 458997320068135610, guid: 362acbb299bc84e4dbc07fc899299d00, type: 3}
@@ -3874,6 +3875,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1974916425}
+    - target: {fileID: 1780037402071716972, guid: 88b8512c06ed2ca49948a443b8ae9f40, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1780037402071716972, guid: 88b8512c06ed2ca49948a443b8ae9f40, type: 3}
       propertyPath: victoryUI
       value: 

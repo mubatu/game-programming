@@ -13,6 +13,12 @@ public class AchievementUI : MonoBehaviour {
         rectTransform = GetComponent<RectTransform>();
         rectTransform.anchoredPosition = new Vector2(offScreenX, rectTransform.anchoredPosition.y);
     }
+    void OnEnable() {
+        EnemyHealth.FinalBossDeath += Show;
+    }
+    void OnDisable() {
+        EnemyHealth.FinalBossDeath -= Show;
+    }
 
     public void Show() {
         StartCoroutine(SlideRoutine());

@@ -12,6 +12,12 @@ public class PlayerHealth : MonoBehaviour {
         currentHealth = maxHealth;
         healthBar.value = 1f;
     }
+    void OnEnable() {
+        EnemyHealth.FinalBossDeath += Regen;
+    }
+    void OnDisable() {
+        EnemyHealth.FinalBossDeath -= Regen;
+    }
 
     public void TakeDamage(int amount) {
         currentHealth -= amount;
