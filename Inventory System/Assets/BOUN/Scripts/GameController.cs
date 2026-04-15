@@ -10,6 +10,7 @@ namespace BOUN.Scripts
         {
             EventController.RemoveAllEvents();
             // todo: Set the fuel inventory to 30
+            InventoryHelper.SetInventoryItem(InventoryType.Fuel, 30);
         }
     }
 }

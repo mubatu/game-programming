@@ -345,8 +345,8 @@ Transform:
   m_GameObject: {fileID: 4536135537020559172}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0328, y: 0, z: 0}
-  m_LocalScale: {x: 0.70820636, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0419, y: 0, z: 0}
+  m_LocalScale: {x: 0.69100785, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3249705476373848462}
@@ -400,7 +400,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7dabbe9369d194ad59f773d2c17ce727, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f36f73cf71c4c456b924bc8d966d79a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 5493110256721585573}
   - component: {fileID: 9035218334432123492}
   m_Layer: 5
-  m_Name: CollectableCoin
+  m_Name: CollectableFuel
   m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b096025d5f946bcad769181e8534b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 2
 --- !u!65 &9035218334432123492
 BoxCollider:
   m_ObjectHideFlags: 0

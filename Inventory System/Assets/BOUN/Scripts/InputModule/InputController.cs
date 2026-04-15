@@ -11,7 +11,7 @@ namespace InputModule
             if (Input.GetMouseButton(0))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("InputMask")))
+                if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
                 {
                     EventController.TriggerEvent(new OnPointSelected {point = hit.point});
                 }

@@ -21,11 +21,13 @@ namespace InventoryModule
         protected virtual void OnEnable()
         {
             // todo:Register the tracker for the inventory
+            InventoryHelper.RegisterTracker(_type, OnTrigger);
         }
 
         protected virtual void OnDisable()
         {
             // todo: Remove the tracker for the inventory
+            InventoryHelper.RemoveTracker(_type, OnTrigger);
         }
 
         

@@ -35,12 +35,13 @@ namespace BOUN.Scripts
             point.y = .1f;
             var lastDistance = Vector3.Distance(controlPoints[^1], point);
             // todo: Check if the distance between the last point and the new point is less than the remaining fuel
-            var remainingFuel = 9999;
+            var remainingFuel = InventoryHelper.GetInventoryItem(InventoryType.Fuel);
             if (lastDistance > .5f && lastDistance < remainingFuel)
             {
                 // todo: If the distance is valid, spend the fuel and add the point to the path
                 controlPoints.Add(point);
                 UpdateLineRenderer();
+                InventoryHelper.TrySpendItem(InventoryType.Fuel, lastDistance);
             }
         }
     
@@ -101,9 +102,16 @@ namespace BOUN.Scripts
                 if (collectable.type == InventoryType.Coin)
                 {
                     // todo: Add the coin to the inventory
+                    InventoryHelper.AddInventoryItem(InventoryType.Coin, 1);
+
                     Debug.Log("Car collected a coin!");
                 }
                 // todo: Add the fuel to the inventory if the collectable is a fuel
+                if (collectable.type == InventoryType.Fuel)
+                {
+                    InventoryHelper.AddInventoryItem(InventoryType.Fuel, 10);
+                    Debug.Log("Car collected fuel!");
+                }
             }
         }
     }

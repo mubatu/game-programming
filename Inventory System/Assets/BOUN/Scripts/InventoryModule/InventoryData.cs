@@ -22,6 +22,7 @@ namespace InventoryModule
         None,
         Coin,
         // todo: add more types here
+        Fuel,
     }
 }
 
