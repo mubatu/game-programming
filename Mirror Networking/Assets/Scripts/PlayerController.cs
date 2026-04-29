@@ -26,4 +26,17 @@ public class PlayerController : NetworkBehaviour
         // Server moves the player
         transform.position += direction * speed * Time.deltaTime;
     }
+
+    [SyncVar(hook = nameof(OnHealthChanged))]
+    public int health = 100;
+    
+    // Hook: called on ALL CLIENTS when health changes
+    void OnHealthChanged(int oldHealth, int newHealth)
+    {
+        // Change color: green (100) to red (0)
+        float ratio = newHealth / 100f;
+        GetComponent<Renderer>().material.color =
+            Color.Lerp(Color.red, Color.green, ratio);
+    }
+    
 }
