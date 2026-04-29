@@ -29,7 +29,7 @@ public class PlayerController : NetworkBehaviour
 
     [SyncVar(hook = nameof(OnHealthChanged))]
     public int health = 100;
-    
+
     // Hook: called on ALL CLIENTS when health changes
     void OnHealthChanged(int oldHealth, int newHealth)
     {
@@ -38,5 +38,31 @@ public class PlayerController : NetworkBehaviour
         GetComponent<Renderer>().material.color =
             Color.Lerp(Color.red, Color.green, ratio);
     }
-    
+
+    void OnTriggerStay(Collider other)
+    {
+        if (!isServer) return;  // Only server applies damage
+
+        health -= 1;
+        // SyncVar auto-syncs to all clients
+        // OnHealthChanged hook fires on every client
+
+        RpcDamageFlash();  // Server tells ALL clients to show effect
+    }
+
+    [ClientRpc]  // Runs on ALL clients
+    void RpcDamageFlash()
+    {
+        // Brief scale pulse for visual feedback
+        StartCoroutine(DamageFlashCoroutine());
+    }
+
+    IEnumerator DamageFlashCoroutine()
+    {
+        transform.localScale = Vector3.one * 1.3f;
+        yield return new WaitForSeconds(0.1f);
+        transform.localScale = Vector3.one;
+    }
+
+
 }
