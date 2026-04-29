@@ -44,11 +44,23 @@ public class PlayerController : NetworkBehaviour
     {
         if (!isServer) return;  // Only server applies damage
 
+        int previousHealth = health;
         health -= 1;
+
+        // Send a private warning only when crossing below the low-health threshold.
+        if (previousHealth >= 30 && health < 30)
+            TargetLowHealthWarning(connectionToClient);
+
         // SyncVar auto-syncs to all clients
         // OnHealthChanged hook fires on every client
 
         RpcDamageFlash();  // Server tells ALL clients to show effect
+    }
+
+    [TargetRpc]
+    void TargetLowHealthWarning(NetworkConnectionToClient target)
+    {
+        Debug.Log("WARNING: Low health!");
     }
 
     [ClientRpc]  // Runs on ALL clients
